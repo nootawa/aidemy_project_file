@@ -8,7 +8,7 @@ import numpy as np
 
 
 classes = ["正常","異常"]
-image_size = 512
+image_size = 100
 
 UPLOAD_FOLDER = "uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -18,7 +18,7 @@ app = Flask(__name__)
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-model = load_model('./casting_defect_model1_1.h5')#学習済みモデルをロード
+model = load_model('./casting_defect_model1_2.h5')#学習済みモデルをロード
 
 
 @app.route('/', methods=['GET', 'POST'])
