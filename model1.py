@@ -7,7 +7,8 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 
 
-classes = ["正常","異常"]
+# ねじれ:classes = ["正常","異常"]
+classes = ["異常","正常"]
 image_size = 150
 
 UPLOAD_FOLDER = "uploads"
