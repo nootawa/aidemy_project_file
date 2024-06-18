@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Casting Defect Classifier</title>
     <link rel="stylesheet" href="./static/stylesheet.css">
+    <link rel="icon" href="./static/templates/kkrn_icon_haguruma_1.ico">
     
 </head>
 <body>
     <header>   
         <img class="header_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
         <a class="header-logo" href="#">Casting Defect Classifier</a>
-        <link rel="icon" href="./static/templates/kkrn_icon_haguruma_1.ico">
     </header>
 
     <div class="main">
@@ -20,13 +20,13 @@
         <h1>AIアプリ開発講座成果物</h1>
         <h2> AIが送信された画像の異常または正常のどちらかに分類します</h2>
         <p>画像をアップロードしてください</p>
-        <a href="https://drive.google.com/file/d/14ftPlzf0_YUm1h7RgwZAfNizKp2qym4c/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a>
-        <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-vb122pgNKDHkCk/view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>
         <p>アップロードされた画像は、AIにより異常/正常の判定が行われ、その結果が表示されます</p>
         <form method="POST" enctype="multipart/form-data">
             <input class="file_choose" type="file" name="file">
             <input class="btn" value="アップロード" type="submit">
         </form>
+        <a href="https://drive.google.com/file/d/14ftPlzf0_YUm1h7RgwZAfNizKp2qym4c/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a><br>
+        <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-vb122pgNKDHkCk/view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>
         <div class="answer">{{answer}}</div>
     </div>
 
