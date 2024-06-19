@@ -8,7 +8,7 @@ import numpy as np
 
 
 # ねじれ:classes = ["正常","異常"]
-classes = ["異常あり","正常です"]
+classes = ["異常","正常"]
 image_size = 150
 
 UPLOAD_FOLDER = "uploads"
@@ -45,7 +45,7 @@ def upload_file():
             #変換したデータをモデルに渡して予測する
             result = model.predict(data)[0]
             predicted = result.argmax()
-            pred_answer = "これは " + classes[predicted] + " です"
+            pred_answer = "アップロードされた画像は、 " + classes[predicted] + " な製品画像です"
             return render_template("index.html",answer=pred_answer)
     return render_template("index.html",answer="")
 
