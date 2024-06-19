@@ -8,7 +8,7 @@ import numpy as np
 
 
 # ねじれ:classes = ["正常","異常"]
-classes = ["異常","正常"]
+classes = ["異常あり","正常です"]
 image_size = 150
 
 UPLOAD_FOLDER = "uploads"
