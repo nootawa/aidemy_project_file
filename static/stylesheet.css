@@ -72,3 +72,42 @@ small {
     bottom: 0;
     font-family: 'Noto Sans JP', sans-serif;
 }
+input[type='file'] {
+  color: rgb(31, 41, 55);
+  cursor: pointer;
+  border: 1px solid rgb(191, 194, 199);
+  border-radius: 0.375rem;
+  padding-right: 0.5rem;
+  width: 20rem;
+}
+
+::file-selector-button,
+::-webkit-file-upload-button {
+  background-color: rgb(209, 213, 219);
+  color: rgb(31, 41, 55);
+  border: none;
+  cursor: pointer;
+  border-right: 1px solid rgb(191, 194, 199);
+  padding: 0.25rem 1rem;
+  margin-right: 1rem;
+}
+input[type='submit'] {
+  color: rgb(31, 41, 55);
+  cursor: pointer;
+  border: 1px solid rgb(191, 194, 199);
+  border-radius: 0.375rem;
+  padding-right: 0.5rem;
+  width: 10rem;
+}
+
+::file-selector-button,
+::-webkit-file-upload-button {
+  background-color: rgb(209, 213, 219);
+  color: rgb(31, 41, 55);
+  border: none;
+  cursor: pointer;
+  border-right: 1px solid rgb(191, 194, 199);
+  padding: 0.25rem 1rem;
+  margin-right: 1rem;
+}
+

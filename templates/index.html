@@ -6,33 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Casting Defect Classifier</title>
     <link rel="stylesheet" href="./static/stylesheet.css">
-    <!-- ファビコンの設定 -->
-    <link rel="icon" href="./static/favicon.ico" type="image/x-icon"> 
-    <!-- 顔文字をファビコンに表示 -->
-    <!--<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥳</text></svg>"> -->
-
+    <!-- ファビコンの設定 icoファイルをcssと同列にしたら表示できた -->
+    <link rel="icon" href="./static/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>   
+    <header>
         <img class="header_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
         <a class="header-logo" href="#">Casting Defect Classifier</a>
     </header>
     <div class="main">
         <h1>AIアプリ開発講座成果物</h1>
-        <h2> AIが送信された画像の異常または正常のどちらかに分類します</h2>
+        <h2>AIが送信された画像の異常または正常のどちらかに分類します</h2>
         <p>画像をアップロードしてください</p>
         <p>アップロードされた画像は、AIにより異常/正常の判定が行われ、その結果が表示されます</p>
-        <form method="POST" enctype="multipart/form-data">
-            <input class="file_choose" type="file" name="file">
-            <input class="btn" value="アップロード" type="submit">
+        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+          <input type="file" id="fileInput" name="fileInput">
+          <button type="submit" id="uploadButton" disabled>アップロード</button>
         </form>
+        <script src="upload.js"></script>
+      
         <div class="answer">{{answer}}</div>
         <a href="https://drive.google.com/file/d/14ftPlzf0_YUm1h7RgwZAfNizKp2qym4c/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a><br>
         <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-vb122pgNKDHkCk/view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>
     </div>
+    <div class="loading-content js-loading" style="display: none;">
+        <div class="loader">
+            <p class="loader-text">Loading</p>
+        </div>
+    </div>
     <footer>
         <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
-        <small>&copy; 2024 NO, inc.</small>   
+        <small>&copy; 2024 NO, inc.</small>
     </footer>
 </body>
 </html>
+
