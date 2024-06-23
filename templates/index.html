@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./static/stylesheet.css">
     <!-- ファビコンの設定 icoファイルをcssと同列にしたら表示できた -->
     <link rel="icon" href="./static/favicon.ico" type="image/x-icon">
+    <script src="./upload.js"></script>
 </head>
 <body>
     <header>
@@ -25,20 +26,20 @@
         </form>
       
         <div class="answer">{{answer}}</div>
-        <a href="https://drive.google.com/file/d/14ftPlzf0_YUm1h7RgwZAfNizKp2qym4c/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a><br>
+        <a href="https://drive.google.com/file/d/14ftPlzf0_YUm1h7RgwZAfNizKp2qym4c/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a>
+        <br>
+        <br>
         <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-vb122pgNKDHkCk/view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>
     </div>
     <div class="loading-content js-loading" style="display: none;">
         <div class="loader">
             <p class="loader-text">Loading</p>
         </div>
-        
-    </div>
+        </div>
     <footer>
         <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
         <small>&copy; 2024 NO, inc.</small>
     </footer>
-    <script src="./upload.js" crossorigin></script>
 </body>
 </html>
 
