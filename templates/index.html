@@ -6,12 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Casting Defect Classifier</title>
     <link rel="stylesheet" href="./static/stylesheet.css">
-    <!-- ファビコンの設定 icoファイルをcssと同列にしたら表示できた -->
     <link rel="icon" href="./static/favicon.ico" type="image/x-icon"> 
 </head>
 <body>
     <header>   
-        <img class="header_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
+        <img class="header_img" src="https://aidemyexstorage.blob.core.windows.net/1621500180546399.png" alt="Aidemy">
         <a class="header-logo" href="#">Casting Defect Classifier</a>
     </header>
     <div class="main">
@@ -19,14 +18,13 @@
         <h2>AIが送信された画像の異常または正常のどちらかに分類します</h2>
         <p>画像をアップロードしてください</p>
         <p>アップロードされた画像は、AIにより異常/正常の判定が行われ、その結果が表示されます</p>
-        <form id="uploadForm" method="post" enctype="multipart/form-data">
+        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
           <input type="file" id="fileInput" name="fileInput">
           <button type="submit" id="uploadButton" disabled>アップロード</button>
         </form>
-      
         <div class="answer">{{answer}}</div>
-        <a href="https://drive.google.com/file/d/14ftPlzf0_YUm1h7RgwZAfNizKp2qym4c/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a><br>
-        <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-vb122pgNKDHkCk/view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>  
+        <a href="https://drive.google.com/file/d/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a><br>
+        <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>  
     </div>
     <div class="loading-content js-loading" style="display: none;">
         <div class="loader">
@@ -34,7 +32,7 @@
         </div>
     </div>
     <footer>
-        <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
+        <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/1621500180546399.png" alt="Aidemy">
         <small>&copy; 2024 NO, inc.</small>   
     </footer>
     <script src="upload.js"></script>
