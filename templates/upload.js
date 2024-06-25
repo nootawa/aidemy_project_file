@@ -27,15 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "upload.php", true);
-    
-    // loading button 表示
-    const loading = document.querySelector('.js-loading');
-    loading.style.display = 'block';
 
     xhr.onload = () => {
-      // loading button 非表示
-      loading.style.display = 'none';
-
       if (xhr.readyState == 4 && xhr.status == 200) {
         const response = JSON.parse(xhr.responseText);
         document.querySelector('.answer').innerText = response.answer;
