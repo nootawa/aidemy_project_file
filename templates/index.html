@@ -18,19 +18,22 @@
         <h2>AIが送信された画像の異常または正常のどちらかに分類します</h2>
         <p>画像をアップロードしてください</p>
         <p>アップロードされた画像は、AIにより異常/正常の判定が行われ、その結果が表示されます</p>
-        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+        <form id="uploadForm" method="post" enctype="multipart/form-data">
           <input type="file" id="fileInput" name="fileInput">
-          <button type="submit" id="uploadButton" disabled>アップロード</button>
+          <button type="submit" id="uploadButton" disabled="true">アップロード</button>
         </form>
         <div class="answer">{{answer}}</div>
-        <a href="https://drive.google.com/file/d/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a><br>
+        <a href="https://drive.google.com/file/d/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a>
+        <br><br>
         <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>  
     </div>
+    <!--
     <div class="loading-content js-loading" style="display: none;">
         <div class="loader">
             <p class="loader-text">Loading</p>
         </div>
     </div>
+    -->
     <footer>
         <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
         <small>&copy; 2024 NO, inc.</small>   
