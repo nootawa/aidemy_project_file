@@ -7,99 +7,10 @@
     <title>Casting Defect Classifier</title>
     <link rel="stylesheet" href="./static/stylesheet.css">
     <!-- ファビコンの設定 icoファイルをcssと同列にしたら表示できた -->
-    <link rel="icon" href="./static/favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px;
-        }
-        .header_img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        .header-logo {
-            font-size: 24px;
-            color: white;
-            text-decoration: none;
-        }
-        .main {
-            padding: 20px;
-        }
-        .answer {
-            margin-top: 20px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-        footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .footer_img {
-            height: 50px;
-            margin-right: 10px;
-        }
-    </style>
-    <script>
-        function validateUpload() {
-            var fileInput = document.getElementById('fileInput');
-            var uploadButton = document.getElementById('uploadButton');
-
-            // ファイルが選択されているかをチェック
-            if (fileInput.value) {
-                uploadButton.disabled = false; // 選択されていればボタンを有効化
-            } else {
-                uploadButton.disabled = true; // 選択されていなければボタンを無効化
-            }
-        }
-
-        // ページ読み込み時に初期状態を確認
-        document.addEventListener('DOMContentLoaded', function() {
-            var fileInput = document.getElementById('fileInput');
-            var uploadButton = document.getElementById('uploadButton');
-
-            // 初期状態でファイルが選択されているかをチェック
-            validateUpload();
-
-            // ファイル選択時のイベントリスナーを設定
-            fileInput.addEventListener('change', validateUpload);
-
-            uploadButton.addEventListener("click", function (event) {
-                event.preventDefault();
-                const formData = new FormData(document.getElementById('uploadForm'));
-
-                const xhr = new XMLHttpRequest();
-                xhr.open("POST", "upload.php", true);
-
-                xhr.onload = () => {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        const response = JSON.parse(xhr.responseText);
-                        document.querySelector('.answer').innerText = response.answer;
-                    } else {
-                        console.log(`Error: ${xhr.status}`);
-                    }
-                };
-                xhr.send(formData);
-            }, false);
-        });
-    </script>
+    <link rel="icon" href="./static/favicon.ico" type="image/x-icon"> 
 </head>
 <body>
-    <header>
+    <header>   
         <img class="header_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
         <a class="header-logo" href="#">Casting Defect Classifier</a>
     </header>
@@ -112,16 +23,21 @@
           <input type="file" id="fileInput" name="fileInput">
           <button type="submit" id="uploadButton" disabled>アップロード</button>
         </form>
+        <script src="upload.js"></script>
       
         <div class="answer">{{answer}}</div>
-        <a href="https://drive.google.com/file/d/14ftPlzf0_YUm1h7RgwZAfNizKp2qym4c/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a>
-        <br>
-        <br>
-        <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-vb122pgNKDHkCk/view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>
+        <a href="https://drive.google.com/file/d/14ftPlzf0_YUm1h7RgwZAfNizKp2qym4c/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a><br>
+        <a href="https://drive.google.com/file/d/1wEhfq1mfI0SYfxV1h-vb122pgNKDHkCk/view?usp=drive_link" download>正常画像 ここをクリックして画像ファイルをダウンロード</a>  
+    </div>
+    <div class="loading-content js-loading" style="display: none;">
+        <div class="loader">
+            <p class="loader-text">Loading</p>
+        </div>
     </div>
     <footer>
         <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
-        <small>&copy; 2024 NO, inc.</small>
+        <small>&copy; 2024 NO, inc.</small>   
     </footer>
 </body>
 </html>
+
