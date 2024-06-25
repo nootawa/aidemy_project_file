@@ -3,7 +3,7 @@ function validateUpload() {
   var uploadButton = document.getElementById('uploadButton');
 
   // ファイルが選択されているかをチェック
-  if (fileInput.value) {
+  if (fileInput.files.length > 0) {
     uploadButton.disabled = false; // 選択されていればボタンを有効化
   } else {
     uploadButton.disabled = true; // 選択されていなければボタンを無効化
