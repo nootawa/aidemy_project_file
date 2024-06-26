@@ -39,6 +39,19 @@
         <img class="footer_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
         <small>&copy; 2024 NO, inc.</small>
     </footer>
-    <script src="./js/upload.js" defer></script>
+    <!--    <script src="./js/upload.js" defer></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const fileInput = document.getElementById('fileInput');
+        const uploadButton = document.getElementById('uploadButton');
+          fileInput.addEventListener('change', function () {
+          if (fileInput.files.length > 0) {
+              uploadButton.disabled = false;
+          } else {
+              uploadButton.disabled = true;
+              }
+          });
+        });
+        </script>
 </body>
 </html>
