@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing import image
 
 import numpy as np
 
-import secrets
+# import secrets
 
 # ねじれ:classes = ["正常","異常"]
 classes = ["異常","正常"]
@@ -16,7 +16,7 @@ UPLOAD_FOLDER = "uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(16)
+# app.secret_key = secrets.token_hex(16)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
