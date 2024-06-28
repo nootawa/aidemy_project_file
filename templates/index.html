@@ -19,7 +19,7 @@
         <p>画像をアップロードしてください</p>
         <p>アップロードされた画像は、AIにより異常/正常の判定が行われ、その結果が表示されます</p>
         <form id="uploadForm" method="post" enctype="multipart/form-data">
-          <input type="file" id="fileInput" name="fileInputt">
+          <input type="file" id="fileInputt" name="fileInput">
           <button type="submit" id="uploadButton" disabled>アップロード</button>
         </form>
         <div class="answer">{{answer}}</div>
@@ -34,7 +34,7 @@
 
      <script>
         document.addEventListener('DOMContentLoaded', function () {
-        const fileInput = document.getElementById('fileInput');
+        const fileInput = document.getElementById('fileInputt');
         const uploadButton = document.getElementById('uploadButton');
           fileInput.addEventListener('change', function () {
           if (fileInput.files.length > 0) {
