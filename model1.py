@@ -27,7 +27,7 @@ def upload_file():
         if 'file' not in request.files:
             flash('ファイルがありません')
             return redirect(request.url)
-        file = request.files["fileInput"]
+        file = request.files["fileInputt"]
         if file.filename == '':
             flash('ファイルがありません')
             return redirect(request.url)
