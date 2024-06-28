@@ -6,6 +6,8 @@ from tensorflow.keras.preprocessing import image
 
 import numpy as np
 
+import secrets
+
 # ねじれ:classes = ["正常","異常"]
 classes = ["異常","正常"]
 image_size = 150
@@ -14,6 +16,7 @@ UPLOAD_FOLDER = "uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
+app.secret_key = secrets.token_hex(16)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -27,7 +30,7 @@ def upload_file():
         if 'file' not in request.files:
             flash('ファイルがありません')
             return redirect(request.url)
-        file = request.files["fileInput"]
+        file = request.files['fileInput']
         if file.filename == '':
             flash('ファイルがありません')
             return redirect(request.url)
