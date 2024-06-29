@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing import image
 
 import numpy as np
 
-import secrets
+
 
 # ねじれ:classes = ["正常","異常"]
 classes = ["異常","正常"]
@@ -16,7 +16,6 @@ UPLOAD_FOLDER = "uploads"
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(16)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -27,7 +26,7 @@ model = load_model('./casting_defect_model1_4.h5')#学習済みモデルをロ�
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        if 'file' not in request.files:
+        if 'fileInput' not in request.files:
             flash('ファイルがありません')
             return redirect(request.url)
         file = request.files['fileInput']
