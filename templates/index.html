@@ -24,7 +24,7 @@
         </form>
         <div class="loading-content js-loading">
         <div class="loader"><p class="loader-text">Loading</p></div>
-        </div>
+            </div>
         <div class="answer">{{answer}}</div>
         <a href="https://drive.google.com/file/d/view?usp=drive_link" download>異常画像 ここをクリックして画像ファイルをダウンロード</a>
         <br><br>
@@ -35,7 +35,7 @@
         <small>&copy; 2024 NO, inc.</small>
     </footer>
 
-     <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
         const fileInput = document.getElementById('fileInput');
         const uploadButton = document.getElementById('uploadButton');
@@ -47,13 +47,6 @@
               }
           });
         });
-        // 実装を見やすくするため、ローディングの時間を設定しています
-        const loading = document.querySelector('.js-loading');
-        window.addEventListener('load', () => {
-        setTimeout(() => {
-            loading.classList.add('js-loaded');
-        }, 5000); // ミリ秒単位で遅延時間を指定
-        });
-        </script>
+    </script>
 </body>
 </html>
