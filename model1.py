@@ -36,7 +36,7 @@ def upload_file():
             filepath = os.path.join(UPLOAD_FOLDER, filename)
 
             #受け取った画像を読み込み、np形式に変換
-            # 今回モデルはグレースケール指定ではないため、color_mode="grayscale"無指定
+            #今回モデルはグレースケール指定ではないため、color_mode="grayscale"無指定
             img = image.load_img(filepath, target_size=(image_size,image_size))
             img = image.img_to_array(img)
             data = np.array([img])
